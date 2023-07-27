@@ -36,6 +36,7 @@ function escopo(){
     const botoes = document.querySelectorAll('.controle-ajuste');
     const valoresContador = document.querySelectorAll('.controle-contador');
     const estatisticaNumeros = document.querySelectorAll('.estatistica-numero');
+    const botaoTroca = document.querySelector('i');
     
     botoes.forEach(function(el){
         el.addEventListener("click", function(e){
@@ -43,15 +44,17 @@ function escopo(){
             valoresContador.forEach(function(contador){
                 let operacao;
                 if(botao.parentElement === contador.parentElement){
-                    if(botao.classList[1]=== 'bmenos'){
+                    if(botao.classList[1]=== 'bmenos' && contador.value<0){
                         contador.value -= 1;
                         operacao='subtrair';
                         atualizarDados(botao , operacao);
-                    }else{
+                    }else if(botao.classList[1]=== 'bmais' && contador.value<10){
                         let valor = Number(contador.value);
                         contador.value=valor+=1;
                         operacao = 'somar';
                         atualizarDados(botao, operacao);
+                    }else{
+                        alert('O robotron não pode ter número de peças abaixo de 0 e nem acima de 10');
                     }
                 }
             })
@@ -78,6 +81,19 @@ function escopo(){
         }
 
     }
+    botaoTroca.addEventListener("click", ()=>{
+        let img = document.querySelector('.robo');
+        let valorAtt = img.getAttribute("src");
+        if(valorAtt.indexOf('azul')!=-1){
+            img.setAttribute("src", 'img/rosa.png');
+        }else if(valorAtt.indexOf('rosa')!=-1){
+            img.setAttribute("src", 'img/branco.png');
+        }else{
+            img.setAttribute("src", 'img/azul.png');
+        }
+        
+        
+    })
 
 }
 escopo();

@@ -7,7 +7,26 @@
 * {
     box-sizing: border-box;
 }
-
+i{
+    align-self: flex-end;
+    font-size: 5rem;
+    color: #4a608c;
+    margin-top: 1.5rem;
+    margin-left: 15rem;
+    filter: brightness(100%);
+}
+i:hover{
+     animation-name: animacao;
+     animation-duration: 1s;
+}
+@keyframes animacao{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+}
 body {
     background: url(../img/fundo.jpg);
     background-position: center center;
