@@ -44,7 +44,7 @@ function escopo(){
             valoresContador.forEach(function(contador){
                 let operacao;
                 if(botao.parentElement === contador.parentElement){
-                    if(botao.classList[1]=== 'bmenos' && contador.value<0){
+                    if(botao.classList[1]=== 'bmenos' && contador.value>0){
                         contador.value -= 1;
                         operacao='subtrair';
                         atualizarDados(botao , operacao);
