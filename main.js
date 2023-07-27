@@ -37,6 +37,9 @@ function escopo(){
     const valoresContador = document.querySelectorAll('.controle-contador');
     const estatisticaNumeros = document.querySelectorAll('.estatistica-numero');
     const botaoTroca = document.querySelector('i');
+    const alert = document.querySelector('.div-alert');
+    const botaoFechar = document.querySelector('.fa-x');
+    const main = document.querySelector('main');
     
     botoes.forEach(function(el){
         el.addEventListener("click", function(e){
@@ -54,7 +57,8 @@ function escopo(){
                         operacao = 'somar';
                         atualizarDados(botao, operacao);
                     }else{
-                        alert('O robotron não pode ter número de peças abaixo de 0 e nem acima de 10');
+                        alert.style.display = 'block';
+                        main.style.cssText = 'filter: blur(3px);';
                     }
                 }
             })
@@ -94,6 +98,11 @@ function escopo(){
         
         
     })
+    botaoFechar.addEventListener('click', ()=>{
+        alert.style.display = 'none';
+        main.style.filter='none';
+    })
+
 
 }
 escopo();

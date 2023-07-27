@@ -7,7 +7,36 @@
 * {
     box-sizing: border-box;
 }
-i{
+.div-alert{
+    background: linear-gradient(0deg, rgba(195,135,34,1) 16%, rgba(255,237,52,1) 100%);
+    font-size: 3rem;
+    width: 40rem;
+    height: auto;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    display: none;
+    border-radius: 1rem;
+}
+.div-alert p{
+    color: white;
+    margin: 0 1rem 2rem 1rem;
+    text-align: center;
+    line-height: 3rem;
+    text-shadow: 4px 2px 4px #4a608c;
+}
+.fa-x {
+    position: relative;
+    left: 90%;
+    font-size: 2rem;
+    color: #c35122;
+    
+}
+.fa-x:active{
+    animation-name: animacao;
+    animation-duration: 1s;
+}
+.fa-rotate{
     align-self: flex-end;
     font-size: 5rem;
     color: #4a608c;
@@ -15,9 +44,13 @@ i{
     margin-left: 15rem;
     filter: brightness(100%);
 }
-i:hover{
+.fa-rotate:hover{
      animation-name: animacao;
      animation-duration: 1s;
+     
+}
+i{
+    text-shadow: 2px 2px 2px black;
 }
 @keyframes animacao{
     0%{
